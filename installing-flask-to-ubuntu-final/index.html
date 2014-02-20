@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>Installing Flask to Ubuntu Final</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=c00c70833e" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+
+    
+    <meta name="generator" content="Ghost 0.4" />
+<link rel="alternate" type="application/rss+xml" title="Ghost" href="../rss/index.html">
+<link rel="canonical" href="http://my-ghost-blog.com/installing-flask-to-ubuntu-final/" />
+</head>
+<body class="post-template">
+
+    
+    
+
+
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        
+        <header class="post-header">
+            <a class="blog-logo" href="http://my-ghost-blog.com">
+                
+                    <span class="blog-title">Ghost</span>
+                
+            </a>
+        </header>
+
+        
+        
+
+            <span class="post-meta"><time datetime="2014-02-16">16 Feb 2014</time> </span>
+
+            <h1 class="post-title">Installing Flask to Ubuntu Final</h1>
+
+            <section class="post-content">
+                <p>Even after my previous install and its many errors I decided to continue right along to the next logical step which is to look for the basic <em>Hello World</em> application to test my Flask install.</p>
+
+<p>I went to the <a href="http://flask.pocoo.org/docs/quickstart/#deploying-to-a-web-server">Quickstart page of Flask</a> and there I found the directions for my first App.</p>
+
+<pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<p>Ok, they did not quite tell me how to go about making the file since the documentation was not written for novices.</p>
+
+<p>I remember trying to create a file in Linux a while back and it said use <em>"touch"</em> to create an empty file, so I did that and named it hello.py as it said in the instructions. Then I used <em>"pico"</em> to edit the file and typed the above code. Now it was time for me to run the code to test my Flask installation. And ...</p>
+
+<p><img src="http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-06_2358_zps07383f0a.png" alt="" /></p>
+
+<p>Yikes!! I am getting errors. Is it because Flask did not install correctly or did I make a typo in my python file? Here is what I typed into my python file.</p>
+
+<p><img src="http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-09_1535_zpscb4ec3fc.png" alt="" /></p>
+
+<p>Does it look like what is typed in the code above? Well apparently I did think it was correct because I dismissed it and went on to make other decisions in trying to find out how to fix the Flask install.</p>
+
+<p>To make a long story shorter ... there is a saying that goes like this:  </p>
+
+<blockquote>
+  <p>A drowning man with catch at straw ...</p>
+</blockquote>
+
+<p>I was drowning in a sea of coding ignorance and I was catching at straws ... anything to pull me out of the pit I was in, so I began looking for solutions to my <em>Flask</em> problems. </p>
+
+<p>I was running Python 2.7.4, so I said that was my problem and upgraded to 2.7.6. Since Python was not up-to-date, maybe <em>Flask</em> did not install correctly. Went to re-install <em>Virtualenv</em> and was told by the operating system that I already had the newest version installed ... </p>
+
+<p>Okkkk ... then it has to be <em>Flask</em> and I proceeded to re-install that. The operating system told me that the Requirement [was] already satisfied for <em>Flask Werkzeug Jinja2 itsdangerous markupsafe</em> ...say what now? But, my Hello World program was still not working??</p>
+
+<p>So in desperation I decided to take a second look at my <em>Hello World</em> program. Huh! I see a few thing that was not right! I fixed them to arrive at this:</p>
+
+<p><img src="http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-09_1551_zpse6ebedbe.png" alt="" /></p>
+
+<p>In my defense, I don't do black and white very well: words on a paper, the terminal window ... I live color, like the gedit editor and Windows. So if anyone ask, that's my story and I am sticking to it!</p>
+
+<p>Now on to checking my program and to see Flask in action. Drum roll please ...</p>
+
+<p><img src="http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-09_1609_zps4cc75a76.png" alt="" /></p>
+
+<p>Success! </p>
+            </section>
+
+            <footer class="post-footer">
+
+                <section class="author">
+                    <h4>T.Chin</h4>
+                    <p>There isn&#x27;t much to say about me apart from that I love technology. I believe when used the right way they make our lives much easier but used the wrong way you may want to disappear... get my drift?</p>
+                </section>
+
+                <section class="share">
+                    <h4>Share this post</h4>
+                    <a class="icon-twitter" href="http://twitter.com/share?text=Installing%20Flask%20to%20Ubuntu%20Final&url=http://my-ghost-blog.com/installing-flask-to-ubuntu-final/"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                    </a>
+                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://my-ghost-blog.com/installing-flask-to-ubuntu-final/"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                    </a>
+                    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://my-ghost-blog.com/installing-flask-to-ubuntu-final/"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                    </a>
+                </section>
+
+            </footer>
+
+        
+
+    </article>
+
+</main>
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="http://my-ghost-blog.com/rss/"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="http://my-ghost-blog.com/">Ghost</a> &copy; 2014 &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+        </div>
+    </footer>
+
+    
+    <script src="../shared/vendor/jquery/jquery.js?v=c00c70833e"></script>
+
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=c00c70833e"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=c00c70833e"></script>
+
+</body>
+</html>

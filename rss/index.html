@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ghost]]></title><description><![CDATA[Just a blogging platform.]]></description><link>http://my-ghost-blog.com/</link><generator>Ghost v0.4.1</generator><lastBuildDate>Thu, 20 Feb 2014 06:38:51 GMT</lastBuildDate><atom:link href="http://my-ghost-blog.com/rss/" rel="self" type="application/rss+xml"/><author><![CDATA[T.Chin]]></author><ttl>60</ttl><item><title><![CDATA[Installing Flask to Ubuntu Final]]></title><description><![CDATA[<p>Even after my previous install and its many errors I decided to continue right along to the next logical step which is to look for the basic <em>Hello World</em> application to test my Flask install.</p>
+
+<p>I went to the <a href='http://flask.pocoo.org/docs/quickstart/' #deploying-to-a-web-server">Quickstart page of Flask</a> and there I found the directions for my first App.</p>
+
+<pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<p>Ok, they did not quite tell me how to go about making the file since the documentation was not written for novices.</p>
+
+<p>I remember trying to create a file in Linux a while back and it said use <em>"touch"</em> to create an empty file, so I did that and named it hello.py as it said in the instructions. Then I used <em>"pico"</em> to edit the file and typed the above code. Now it was time for me to run the code to test my Flask installation. And ...</p>
+
+<p><img src='http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-06_2358_zps07383f0a.png'  alt="" /></p>
+
+<p>Yikes!! I am getting errors. Is it because Flask did not install correctly or did I make a typo in my python file? Here is what I typed into my python file.</p>
+
+<p><img src='http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-09_1535_zpscb4ec3fc.png'  alt="" /></p>
+
+<p>Does it look like what is typed in the code above? Well apparently I did think it was correct because I dismissed it and went on to make other decisions in trying to find out how to fix the Flask install.</p>
+
+<p>To make a long story shorter ... there is a saying that goes like this:  </p>
+
+<blockquote>
+  <p>A drowning man with catch at straw ...</p>
+</blockquote>
+
+<p>I was drowning in a sea of coding ignorance and I was catching at straws ... anything to pull me out of the pit I was in, so I began looking for solutions to my <em>Flask</em> problems. </p>
+
+<p>I was running Python 2.7.4, so I said that was my problem and upgraded to 2.7.6. Since Python was not up-to-date, maybe <em>Flask</em> did not install correctly. Went to re-install <em>Virtualenv</em> and was told by the operating system that I already had the newest version installed ... </p>
+
+<p>Okkkk ... then it has to be <em>Flask</em> and I proceeded to re-install that. The operating system told me that the Requirement [was] already satisfied for <em>Flask Werkzeug Jinja2 itsdangerous markupsafe</em> ...say what now? But, my Hello World program was still not working??</p>
+
+<p>So in desperation I decided to take a second look at my <em>Hello World</em> program. Huh! I see a few thing that was not right! I fixed them to arrive at this:</p>
+
+<p><img src='http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-09_1551_zpse6ebedbe.png'  alt="" /></p>
+
+<p>In my defense, I don't do black and white very well: words on a paper, the terminal window ... I live color, like the gedit editor and Windows. So if anyone ask, that's my story and I am sticking to it!</p>
+
+<p>Now on to checking my program and to see Flask in action. Drum roll please ...</p>
+
+<p><img src='http://i1205.photobucket.com/albums/bb424/cybercorp/GitHub%20Images/2014-02-09_1609_zps4cc75a76.png'  alt="" /></p>
+
+<p>Success! </p>]]></description><link>http://my-ghost-blog.com/installing-flask-to-ubuntu-final/</link><guid isPermaLink="false">a48df9f2-c6d9-4215-beff-83e17ae7ad17</guid><dc:creator><![CDATA[T.Chin]]></dc:creator><pubDate>Sun, 16 Feb 2014 06:36:31 GMT</pubDate></item><item><title><![CDATA[Welcome to Ghost]]></title><description><![CDATA[<p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
+
+<h2 id="gettingstarted">Getting Started</h2>
+
+<p>Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!</p>
+
+<p>Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use <em>shortcuts</em> to <strong>style</strong> your content. For example, a list:</p>
+
+<ul>
+<li>Item number one</li>
+<li>Item number two
+<ul><li>A nested item</li></ul></li>
+<li>A final item</li>
+</ul>
+
+<p>or with numbers!</p>
+
+<ol>
+<li>Remember to buy some milk  </li>
+<li>Drink the milk  </li>
+<li>Tweet that I remembered to buy the milk, and drank it</li>
+</ol>
+
+<h3 id="links">Links</h3>
+
+<p>Want to link to a source? No problem. If you paste in url, like <a href='http://ghost.org/' >http://ghost.org</a> - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to <a href='http://ghost.org/' >the Ghost website</a>. Neat.</p>
+
+<h3 id="whataboutimages">What about Images?</h3>
+
+<p>Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:</p>
+
+<p><img src='https://ghost.org/images/ghost.png'  alt="The Ghost Logo" /></p>
+
+<p>Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:</p>
+
+<h3 id="quoting">Quoting</h3>
+
+<p>Sometimes a link isn't enough, you want to quote someone on what they've said. It was probably very wisdomous. Is wisdomous a word? Find out in a future release when we introduce spellcheck! For now - it's definitely a word.</p>
+
+<blockquote>
+  <p>Wisdomous - it's definitely a word.</p>
+</blockquote>
+
+<h3 id="workingwithcode">Working with Code</h3>
+
+<p>Got a streak of geek? We've got you covered there, too. You can write inline <code>&lt;code&gt;</code> blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.</p>
+
+<pre><code>.awesome-thing {
+    display: block;
+    width: 100%;
+}
+</code></pre>
+
+<h3 id="readyforabreak">Ready for a Break?</h3>
+
+<p>Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.</p>
+
+<hr />
+
+<h3 id="advancedusage">Advanced Usage</h3>
+
+<p>There's one fantastic secret about Markdown. If you want, you can  write plain old HTML and it'll still work! Very flexible.</p>
+
+<p><input type="text" placeholder="I'm an input field!" /></p>
+
+<p>That should be enough to get you started. Have fun - and let us know what you think :)</p>]]></description><link>http://my-ghost-blog.com/welcome-to-ghost/</link><guid isPermaLink="false">40f93309-6bde-4aac-8711-34e7678a7161</guid><category><![CDATA[Getting Started]]></category><dc:creator><![CDATA[T.Chin]]></dc:creator><pubDate>Sun, 16 Feb 2014 05:44:04 GMT</pubDate></item></channel></rss>
